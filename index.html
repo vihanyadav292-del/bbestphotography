@@ -1,178 +1,1276 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Responsive full-width website template">
-  <meta name="theme-color" content="#111827">
-  <title>My Website</title>
+
+  <title>BBEST Photography | Photography & Creative Services</title>
+  <meta name="description" content="Explore BBEST Photography for photography services, portraits, celebrations, event photography and creative photo sessions in Jaipur, Rajasthan. Contact us for inquiries and bookings.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#111111">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --text: #111827;
-      --muted: #64748b;
-      --accent: #d97706;
-      --accent-dark: #92400e;
-      --border: #e2e8f0;
-      --content-width: 1200px;
+      --bg: #111111;
+      --surface: #1b1b1b;
+      --gold: #d7b56d;
+      --gold-light: #f2d99e;
+      --white: #ffffff;
+      --muted: #c2c2c2;
+      --border: rgba(215,181,109,.25);
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; width: 100%; }
-    body {
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      width: 100%;
-      min-width: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
       background: var(--bg);
-      line-height: 1.6;
-      overflow-wrap: anywhere;
+      color: var(--white);
+      line-height: 1.7;
+      overflow-wrap: break-word;
     }
-    img, video, iframe, svg { max-width: 100%; }
-    img { height: auto; }
-    a { color: inherit; }
-    .site-header {
-      width: 100%;
-      background: #111827;
-      color: white;
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    .header-inner {
-      width: min(100%, var(--content-width));
-      margin: 0 auto;
-      padding: 14px 20px;
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 85px 0;
+    }
+
+    .section-label {
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 20px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 auto 42px;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .gold-text {
+      color: var(--gold-light);
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 23px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: .96rem;
+      border: 1px solid var(--gold);
+      transition: background .2s ease, transform .2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #17130a;
+    }
+
+    .btn-outline {
+      color: var(--gold-light);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: rgba(215,181,109,.1);
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(17,17,17,.97);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    .nav-links {
       display: flex;
       align-items: center;
+      gap: 23px;
+    }
+
+    .nav-links a {
+      font-size: .88rem;
+      color: #eeeeee;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .menu-toggle {
+      display: none;
+      color: var(--gold-light);
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 7px 11px;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background:
+        linear-gradient(90deg, rgba(10,10,10,.96), rgba(10,10,10,.76)),
+        url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1800&q=80')
+        center/cover no-repeat;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-content {
+      max-width: 760px;
+      padding: 85px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--gold-light);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 7px 14px;
+      font-size: .78rem;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      margin-bottom: 23px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      font-size: 1.05rem;
+      color: #e0e0e0;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .hero-note {
+      display: block;
+      margin-top: 17px;
+      color: #c9c9c9;
+      font-size: .85rem;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .service-card {
+      background: var(--surface);
+      padding: 30px 25px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      transition: transform .2s ease, border-color .2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+
+    .service-number {
+      color: var(--gold);
+      font-size: .8rem;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 13px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    /* About */
+    .about-section {
+      background: #171717;
+      border-top: 1px solid #292929;
+      border-bottom: 1px solid #292929;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 17px;
+    }
+
+    .about-panel {
+      padding: 38px;
+      border: 1px solid var(--border);
+      background: #202020;
+      border-radius: 10px;
+    }
+
+    .about-panel h3 {
+      font-size: 1.7rem;
+      margin-bottom: 17px;
+      color: var(--gold-light);
+    }
+
+    .about-panel ul {
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .about-panel li {
+      padding: 7px 0;
+    }
+
+    /* Purpose */
+    .purpose-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .purpose-item {
+      padding: 25px;
+      border-top: 2px solid var(--gold);
+      background: #191919;
+    }
+
+    .purpose-item h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .purpose-item p {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    /* Process */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .process-card {
+      padding: 26px;
+      border: 1px solid #333;
+      border-radius: 8px;
+    }
+
+    .process-card .step {
+      color: var(--gold);
+      font-size: .8rem;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .process-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    /* Contact */
+    .contact-section {
+      background: #181818;
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 35px;
+    }
+
+    .contact-card, .contact-details {
+      background: #202020;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 30px;
+    }
+
+    .contact-details h3,
+    .contact-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
+    .detail {
+      margin-bottom: 22px;
+    }
+
+    .detail strong {
+      display: block;
+      color: var(--gold-light);
+      margin-bottom: 4px;
+    }
+
+    .detail p, .detail a {
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+
+    .detail a:hover {
+      color: var(--gold-light);
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .contact-actions .btn {
+      width: 100%;
+    }
+
+    /* Legal */
+    .legal-section {
+      padding: 75px 0;
+    }
+
+    .legal-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .legal-card {
+      padding: 25px;
+      border: 1px solid #353535;
+      border-radius: 8px;
+      background: #181818;
+      scroll-margin-top: 100px;
+    }
+
+    .legal-card h3 {
+      color: var(--gold-light);
+      font-size: 1.35rem;
+      margin-bottom: 13px;
+    }
+
+    .legal-card p {
+      color: var(--muted);
+      font-size: .91rem;
+      margin-bottom: 12px;
+    }
+
+    .legal-card ul {
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: .91rem;
+    }
+
+    .legal-card li {
+      margin-bottom: 6px;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      background: #0b0b0b;
+    }
+
+    .footer-top {
+      display: flex;
       justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
       gap: 16px;
     }
-    .brand { margin: 0; font-size: clamp(1.2rem, 2.6vw, 1.8rem); line-height: 1.2; }
-    .brand a { text-decoration: none; }
-    .nav { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; }
-    .nav a { text-decoration: none; color: #f8fafc; font-size: .95rem; }
-    .nav a:hover { color: #fbbf24; }
-    .hero {
-      width: 100%;
-      min-height: 300px;
-      display: grid;
-      place-items: center;
-      padding: clamp(36px, 7vw, 84px) 20px;
-      text-align: center;
-      color: white;
-      background: linear-gradient(135deg, #111827, #374151 60%, #92400e);
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: .85rem;
     }
-    .hero-inner { width: min(100%, 900px); }
-    .hero h2 { margin: 0 0 12px; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.12; }
-    .hero p { margin: 0 auto 22px; max-width: 680px; color: #e5e7eb; font-size: clamp(1rem, 2vw, 1.2rem); }
-    .button {
-      display: inline-block; padding: 11px 18px; border-radius: 8px;
-      background: var(--accent); color: #fff; text-decoration: none; font-weight: 700;
+
+    .footer-links a:hover {
+      color: var(--gold-light);
     }
-    .button:hover { background: var(--accent-dark); }
-    main { width: 100%; }
-    .section {
-      width: min(100%, var(--content-width));
-      margin: 0 auto;
-      padding: clamp(28px, 5vw, 56px) 20px;
+
+    .copyright {
+      color: #999;
+      font-size: .82rem;
     }
-    .section h2 { margin: 0 0 12px; font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.25; }
-    .section-intro { margin: 0 0 24px; color: var(--muted); max-width: 760px; }
-    .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-    .card {
-      min-width: 0; padding: 22px; border: 1px solid var(--border);
-      border-radius: 14px; background: var(--surface);
+
+    @media (max-width: 900px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 0 5px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 11px 4px;
+        border-bottom: 1px solid #292929;
+      }
+
+      .services-grid,
+      .purpose-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .hero {
+        min-height: 520px;
+      }
     }
-    .card h3 { margin: 0 0 8px; font-size: 1.15rem; }
-    .card p { margin: 0; color: var(--muted); }
-    .about { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .contact-box { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
-    .site-footer { width: 100%; background: #111827; color: #e5e7eb; }
-    .footer-inner {
-      width: min(100%, var(--content-width)); margin: 0 auto;
-      padding: 24px 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+
+    @media (max-width: 560px) {
+      .container {
+        width: 91%;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .hero {
+        min-height: 500px;
+        background-position: 60% center;
+      }
+
+      .hero-content {
+        padding: 65px 0;
+      }
+
+      .hero h1 {
+        font-size: 2.65rem;
+      }
+
+      .hero p {
+        font-size: .96rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .services-grid,
+      .purpose-grid,
+      .process-grid,
+      .legal-list {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card,
+      .about-panel,
+      .contact-card,
+      .contact-details {
+        padding: 23px;
+      }
+
+      .footer-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .brand {
+        font-size: 1.35rem;
+      }
     }
-    .footer-inner p { margin: 0; }
-    @media (max-width: 760px) {
-      .header-inner { align-items: flex-start; flex-direction: column; padding: 14px 16px; }
-      .nav { width: 100%; gap: 10px 16px; }
-      .nav a { font-size: .92rem; }
-      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .section { padding-left: 16px; padding-right: 16px; }
-      .hero { min-height: 260px; }
-    }
-    @media (max-width: 480px) {
-      .cards { grid-template-columns: minmax(0, 1fr); }
-      .card { padding: 18px; }
-      .hero { padding-left: 16px; padding-right: 16px; }
-      .footer-inner { flex-direction: column; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <h1 class="brand"><a href="#">My Website</a></h1>
-      <nav class="nav" aria-label="Main navigation">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="BBEST Photography Home">
+        BBEST <span>PHOTOGRAPHY</span>
+      </a>
+
+      <button class="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-controls="navLinks"
+        aria-expanded="false"
+        onclick="toggleMenu(this)">☰</button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
         <a href="#home">Home</a>
-        <a href="#about">About Us</a>
         <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#purpose">Our Purpose</a>
         <a href="#contact">Contact</a>
+        <a href="#privacy">Privacy Policy</a>
       </nav>
     </div>
   </header>
 
   <main>
+
+    <!-- HERO SECTION -->
     <section class="hero" id="home">
-      <div class="hero-inner">
-        <h2>Welcome to My Website</h2>
-        <p>A clean, full-width and mobile-responsive website template. Replace this text with your own business details.</p>
-        <a class="button" href="#contact">Contact Us</a>
-      </div>
-    </section>
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">PHOTOGRAPHY · CREATIVITY · MEMORIES</span>
 
-    <section class="section" id="services">
-      <h2>Our Services</h2>
-      <p class="section-intro">Add your services here. The layout adjusts automatically for mobile, tablet and desktop screens.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Service One</h3>
-          <p>Write a short description of your first service here.</p>
-        </article>
-        <article class="card">
-          <h3>Service Two</h3>
-          <p>Write a short description of your second service here.</p>
-        </article>
-        <article class="card">
-          <h3>Service Three</h3>
-          <p>Write a short description of your third service here.</p>
-        </article>
-      </div>
-    </section>
+          <h1>Every Moment Has a <span class="gold-text">Story.</span></h1>
 
-    <section class="about" id="about">
-      <div class="section">
-        <h2>About Us</h2>
-        <p class="section-intro">Add your business introduction here. Keep your content, images and links relevant to your website.</p>
-      </div>
-    </section>
+          <p>
+            Welcome to BBEST Photography. We offer photography services
+            for personal portraits, celebrations, events and creative
+            projects. Contact us to discuss your requirements, preferred
+            style, availability and booking details.
+          </p>
 
-    <section class="section" id="contact">
-      <div class="contact-box">
-        <div>
-          <h2>Contact Us</h2>
-          <p class="section-intro">Add your phone number, email address or contact link here.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold"
+              href="https://wa.me/917737634018?text=Hello%20BBEST%20Photography%2C%20I%20would%20like%20to%20make%20an%20inquiry%20about%20your%20photography%20services."
+              target="_blank" rel="noopener noreferrer">
+              <svg width="21" height="21" viewBox="0 0 24 24"
+                fill="currentColor" aria-hidden="true">
+                <path d="M20.52 3.48A11.8 11.8 0 0 0 12.12 0C5.55 0 .2 5.35.2 11.92c0 2.1.55 4.15 1.6 5.95L.1 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.57 0 11.92-5.35 11.92-11.92 0-3.18-1.24-6.17-3.53-8.41ZM12.12 21.8a9.9 9.9 0 0 1-5.05-1.39l-.36-.21-3.73.98 1-3.64-.24-.37a9.86 9.86 0 0 1-1.52-5.25c0-5.46 4.44-9.9 9.91-9.9 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.9 7c0 5.45-4.44 9.88-9.9 9.88Zm5.43-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.1 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.08-.13-.27-.2-.57-.35Z"/>
+              </svg>
+              Inquire on WhatsApp
+            </a>
+
+            <a class="btn btn-outline" href="#services">
+              Explore Our Services
+            </a>
+          </div>
+
+          <span class="hero-note">
+            Contact us directly for service information and booking inquiries.
+          </span>
         </div>
-        <a class="button" href="mailto:hello@example.com">Email Us</a>
       </div>
     </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="center">
+          <p class="section-label">What We Offer</p>
+          <h2>Our Photography Services</h2>
+          <p class="section-intro">
+            Photography options for different occasions, people and creative
+            needs. Contact us to confirm the specific service, availability
+            and scope of work for your project.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <p class="service-number">SERVICE 01</p>
+            <h3>Event Photography</h3>
+            <p>
+              Photography for celebrations, family gatherings, private
+              functions and other events, based on your requirements.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <p class="service-number">SERVICE 02</p>
+            <h3>Wedding Photography</h3>
+            <p>
+              Discuss photography coverage for wedding ceremonies,
+              related functions and special moments with our team.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <p class="service-number">SERVICE 03</p>
+            <h3>Portrait Photography</h3>
+            <p>
+              Portrait sessions for individuals, couples, families
+              and personal photography projects.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <p class="service-number">SERVICE 04</p>
+            <h3>Product Photography</h3>
+            <p>
+              Photography for products and business presentation.
+              Discuss your product type, preferred style and intended use.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <p class="service-number">SERVICE 05</p>
+            <h3>Personal Photo Sessions</h3>
+            <p>
+              Plan a personal photo session around your occasion,
+              concept, location and creative preferences.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <p class="service-number">SERVICE 06</p>
+            <h3>Creative Photography</h3>
+            <p>
+              Discuss themed shoots, visual concepts and other
+              photography requirements to determine project suitability.
+            </p>
+          </article>
+        </div>
+
+        <div class="center" style="margin-top:35px">
+          <a class="btn btn-gold"
+            href="https://wa.me/917737634018?text=Hello%20BBEST%20Photography%2C%20please%20share%20details%20about%20your%20photography%20services."
+            target="_blank" rel="noopener noreferrer">
+            Ask About Services
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <p class="section-label">About Our Business</p>
+          <h2>About <span class="gold-text">BBEST Photography</span></h2>
+
+          <p>
+            BBEST Photography is a photography service business based in
+            Jaipur, Rajasthan. Our website is designed to help individuals,
+            families and businesses learn about our photography offerings
+            and contact us regarding their requirements.
+          </p>
+
+          <p>
+            We understand that every photography assignment can have
+            different needs. The type of occasion, number of hours,
+            location, preferred style and final deliverables can all
+            influence the scope of a project.
+          </p>
+
+          <p>
+            Our purpose is to provide a clear way for prospective customers
+            to make inquiries, discuss their ideas and obtain information
+            before deciding whether to proceed with a booking.
+          </p>
+
+          <p>
+            For service availability, pricing, deliverables and booking
+            conditions, please contact us directly. The details for each
+            assignment will be discussed and confirmed before a booking
+            is accepted.
+          </p>
+
+          <a class="btn btn-outline" href="#contact">Contact Our Team</a>
+        </div>
+
+        <div class="about-panel">
+          <h3>What You Can Find Here</h3>
+          <ul>
+            <li>Information about our photography service categories.</li>
+            <li>A direct way to ask questions about your project.</li>
+            <li>Contact details for business-related inquiries.</li>
+            <li>Information about the inquiry and booking process.</li>
+            <li>Privacy, website-use and disclaimer information.</li>
+            <li>A convenient way to discuss your photography needs.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PURPOSE SECTION -->
+    <section class="section" id="purpose">
+      <div class="container">
+        <div class="center">
+          <p class="section-label">Why This Website Exists</p>
+          <h2>Our Website's Purpose</h2>
+          <p class="section-intro">
+            This website serves as an information and inquiry platform
+            for BBEST Photography.
+          </p>
+        </div>
+
+        <div class="purpose-grid">
+          <article class="purpose-item">
+            <h3>Service Information</h3>
+            <p>
+              Help visitors understand the photography categories
+              they can ask us about before contacting our business.
+            </p>
+          </article>
+
+          <article class="purpose-item">
+            <h3>Customer Inquiries</h3>
+            <p>
+              Let prospective customers contact us by WhatsApp,
+              telephone or email to discuss their requirements.
+            </p>
+          </article>
+
+          <article class="purpose-item">
+            <h3>Booking Discussions</h3>
+            <p>
+              Provide a starting point for discussing availability,
+              pricing, project details and booking arrangements.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section about-section" id="process">
+      <div class="container">
+        <div class="center">
+          <p class="section-label">Simple & Clear</p>
+          <h2>How to Make an Inquiry</h2>
+          <p class="section-intro">
+            Contact us with your requirements so we can discuss the
+            next steps for your photography project.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card">
+            <p class="step">STEP 01</p>
+            <h3>Share Your Requirements</h3>
+            <p>
+              Tell us which photography service you need, your preferred
+              date, location and any relevant details.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <p class="step">STEP 02</p>
+            <h3>Discuss the Details</h3>
+            <p>
+              Ask about availability, pricing, coverage, deliverables
+              and any conditions that apply to your project.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <p class="step">STEP 03</p>
+            <h3>Confirm Your Booking</h3>
+            <p>
+              Proceed only after the service scope, applicable charges,
+              schedule and booking terms have been agreed upon.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT US -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="center">
+          <p class="section-label">Get in Touch</p>
+          <h2>Contact <span class="gold-text">BBEST Photography</span></h2>
+          <p class="section-intro">
+            Have a photography project or need service information?
+            Contact us using the details below.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-details">
+            <h3>Business Information</h3>
+
+            <div class="detail">
+              <strong>Business Name</strong>
+              <p>BBEST Photography</p>
+            </div>
+
+            <div class="detail">
+              <strong>Inquiry Phone Number</strong>
+              <a href="tel:+917737634018">+91 77376 34018</a>
+            </div>
+
+            <div class="detail">
+              <strong>Email Address</strong>
+              <a href="mailto:bbestphotography@gmail.com">
+                bbestphotography@gmail.com
+              </a>
+            </div>
+
+            <div class="detail">
+              <strong>Business Address</strong>
+              <p>
+                Silly Rabbit Kafe, 46, Sanjay Gandhi Marg, Gopalbari,
+                Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302001, India.
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>Make an Inquiry</h3>
+            <p>
+              For photography service details, quotations, availability
+              and booking inquiries, contact us directly. Please include
+              your preferred service and event date where applicable.
+            </p>
+
+            <div class="contact-actions">
+              <a class="btn btn-gold"
+                href="https://wa.me/917737634018?text=Hello%20BBEST%20Photography%2C%20I%20would%20like%20to%20inquire%20about%20your%20photography%20services.%20Please%20share%20the%20details."
+                target="_blank" rel="noopener noreferrer">
+                Inquire on WhatsApp
+              </a>
+
+              <a class="btn btn-outline" href="tel:+917737634018">
+                Call for Information
+              </a>
+
+              <a class="btn btn-outline"
+                href="mailto:bbestphotography@gmail.com?subject=Photography%20Service%20Inquiry">
+                Send an Email
+              </a>
+
+              <a class="btn btn-outline"
+                href="https://www.google.com/maps/search/?api=1&query=Silly%20Rabbit%20Kafe%2C%2046%20Sanjay%20Gandhi%20Marg%2C%20Gopalbari%2C%20Jaipur%20302001"
+                target="_blank" rel="noopener noreferrer">
+                View Address on Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEGAL INFORMATION -->
+    <section class="legal-section" id="policies">
+      <div class="container">
+        <div class="center">
+          <p class="section-label">Policies & Transparency</p>
+          <h2>Website Policies</h2>
+          <p class="section-intro">
+            Please review the following information before using this
+            website or contacting us about a photography service.
+          </p>
+        </div>
+
+        <div class="legal-list">
+
+          <!-- PRIVACY POLICY -->
+          <article class="legal-card" id="privacy">
+            <h3>Privacy Policy</h3>
+            <p>
+              <strong>Last updated: October 15, 2026</strong>
+            </p>
+            <p>
+              BBEST Photography respects the privacy of website visitors
+              and people who contact our business. This policy explains
+              how information may be handled when you use this website
+              or communicate with us.
+            </p>
+
+            <p><strong>Information You Provide</strong></p>
+            <p>
+              If you contact us by telephone, email or WhatsApp, you may
+              provide information such as your name, contact details,
+              event date, location and photography requirements.
+            </p>
+
+            <p><strong>How Information Is Used</strong></p>
+            <ul>
+              <li>To respond to inquiries and service questions.</li>
+              <li>To discuss quotations, availability and bookings.</li>
+              <li>To communicate about a requested photography service.</li>
+              <li>To maintain relevant business records where necessary.</li>
+            </ul>
+
+            <p><strong>Sharing of Information</strong></p>
+            <p>
+              We do not sell personal information as a business practice.
+              Information may be processed by communication providers
+              when you use their services, or disclosed where required
+              by law. Information is shared with others only as
+              appropriate for the stated purpose and applicable law.
+            </p>
+
+            <p><strong>Third-Party Services</strong></p>
+            <p>
+              WhatsApp, email providers, Google Fonts and external map
+              links may be governed by their own privacy policies.
+              When you use these services, their providers may process
+              technical or other information under their applicable terms.
+            </p>
+
+            <p><strong>Security and Retention</strong></p>
+            <p>
+              We take reasonable steps to handle information appropriately.
+              No method of electronic transmission or storage can be
+              guaranteed completely secure. Information is retained only
+              as reasonably necessary for its purpose and applicable
+              legal or business requirements.
+            </p>
+
+            <p><strong>Your Choices</strong></p>
+            <p>
+              You may contact us to ask about personal information you
+              have provided or to request correction or deletion where
+              applicable. Certain records may need to be retained where
+              required by law.
+            </p>
+
+            <p>
+              Privacy questions can be sent to
+              <a class="gold-text" href="mailto:bbestphotography@gmail.com">
+                bbestphotography@gmail.com
+              </a>.
+            </p>
+          </article>
+
+          <!-- TERMS AND CONDITIONS -->
+          <article class="legal-card" id="terms">
+            <h3>Terms & Conditions</h3>
+            <p>
+              <strong>Last updated: October 15, 2026</strong>
+            </p>
+            <p>
+              By accessing this website, you agree to use it lawfully
+              and in accordance with these terms. If you do not agree,
+              please discontinue use of the website.
+            </p>
+
+            <p><strong>Website Information</strong></p>
+            <p>
+              This website provides general information about BBEST
+              Photography and a means of making inquiries. Submitting
+              an inquiry does not automatically confirm a booking.
+            </p>
+
+            <p><strong>Services and Pricing</strong></p>
+            <p>
+              Service availability, prices, session duration, travel
+              requirements, editing, deliverables and timelines must be
+              discussed and confirmed for each assignment. No price or
+              service is guaranteed until agreed upon.
+            </p>
+
+            <p><strong>Bookings and Payments</strong></p>
+            <p>
+              Any applicable advance payment, cancellation rules,
+              rescheduling conditions, delivery schedule and other
+              booking requirements should be communicated and agreed
+              upon before the assignment is confirmed.
+            </p>
+
+            <p><strong>Website Content</strong></p>
+            <p>
+              Website text, design and other original materials may not
+              be copied or commercially reused without appropriate
+              permission, except where permitted by law.
+            </p>
+
+            <p><strong>External Links</strong></p>
+            <p>
+              Links to third-party websites or services are provided
+              for convenience. We are not responsible for their
+              independent content, policies or availability.
+            </p>
+
+            <p><strong>Changes and Applicable Law</strong></p>
+            <p>
+              We may update website content or these terms when necessary.
+              Applicable laws of India govern use of this website,
+              subject to applicable legal requirements.
+            </p>
+
+            <p>
+              Questions about these terms:
+              <a class="gold-text" href="mailto:bbestphotography@gmail.com">
+                bbestphotography@gmail.com
+              </a>.
+            </p>
+          </article>
+
+          <!-- DISCLAIMER -->
+          <article class="legal-card" id="disclaimer">
+            <h3>Disclaimer</h3>
+            <p>
+              The information on this website is provided for general
+              informational and inquiry purposes. We aim to keep it
+              clear and relevant, but details may change.
+            </p>
+
+            <p><strong>Service Availability</strong></p>
+            <p>
+              Photography services, dates, locations, prices and
+              deliverables depend on the specific assignment and
+              confirmation with our business. Contact us to verify
+              current information.
+            </p>
+
+            <p><strong>Images and Examples</strong></p>
+            <p>
+              Any illustrative or stock imagery used on this website
+              is for visual presentation and may not represent an
+              actual BBEST Photography assignment or portfolio.
+              Do not treat illustrative images as verified examples
+              of completed client work.
+            </p>
+
+            <p><strong>Third-Party Services</strong></p>
+            <p>
+              We do not control third-party platforms linked from this
+              website. Their availability and policies may change
+              independently.
+            </p>
+
+            <p>
+              Nothing in this disclaimer excludes any rights or
+              liabilities that cannot lawfully be excluded under
+              applicable law.
+            </p>
+          </article>
+
+          <!-- REFUND AND CANCELLATION POLICY -->
+          <article class="legal-card" id="refund">
+            <h3>Refund & Cancellation Policy</h3>
+            <p>
+              Photography assignments can involve scheduling,
+              preparation and time reserved for a customer.
+              Cancellation and refund arrangements should therefore
+              be clarified before a booking is confirmed.
+            </p>
+
+            <p><strong>Before Booking</strong></p>
+            <p>
+              Please ask about any advance payment, cancellation
+              charges, rescheduling conditions and refund eligibility
+              before making a payment.
+            </p>
+
+            <p><strong>Customer Cancellation</strong></p>
+            <p>
+              If you need to cancel or reschedule, contact us as soon
+              as possible. Any refund or applicable charge will depend
+              on the agreed booking terms and applicable law.
+            </p>
+
+            <p><strong>Cancellation by the Business</strong></p>
+            <p>
+              If we cannot provide a confirmed service, we will
+              communicate with the customer to discuss appropriate
+              next steps, including rescheduling or any refund due
+              under the agreed terms and applicable law.
+            </p>
+
+            <p><strong>How to Contact Us</strong></p>
+            <p>
+              For cancellation or refund questions, email
+              <a class="gold-text" href="mailto:bbestphotography@gmail.com">
+                bbestphotography@gmail.com
+              </a>
+              or call
+              <a class="gold-text" href="tel:+917737634018">7737634018</a>.
+            </p>
+
+            <p>
+              Applicable consumer rights are not limited by this policy.
+              Confirm your actual refund rules before accepting customer
+              payments; this section is a general starting template.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p>© <span id="year"></span> My Website. All rights reserved.</p>
-      <p><a href="#about">About Us</a> · <a href="#contact">Contact</a></p>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#home" class="brand">
+          BBEST <span>PHOTOGRAPHY</span>
+        </a>
+
+        <nav class="footer-links" aria-label="Legal links">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms & Conditions</a>
+          <a href="#disclaimer">Disclaimer</a>
+          <a href="#refund">Refund Policy</a>
+          <a href="#contact">Contact Us</a>
+        </nav>
+      </div>
+
+      <p class="copyright">
+        © <span id="currentYear">2026</span> BBEST Photography.
+        All rights reserved.
+      </p>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+    function toggleMenu(button) {
+      const menu = document.getElementById('navLinks');
+      const isOpen = menu.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(isOpen));
+      button.setAttribute('aria-label',
+        isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      button.textContent = isOpen ? '✕' : '☰';
+    }
+
+    document.querySelectorAll('#navLinks a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        const menu = document.getElementById('navLinks');
+        const button = document.querySelector('.menu-toggle');
+        menu.classList.remove('open');
+        button.setAttribute('aria-expanded', 'false');
+        button.setAttribute('aria-label', 'Open navigation menu');
+        button.textContent = '☰';
+      });
+    });
+
+    document.getElementById('currentYear').textContent =
+      new Date().getFullYear();
+  </script>
+
 </body>
 </html>
